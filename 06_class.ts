@@ -10,15 +10,27 @@ class PointN {
     console.log("X: " + this.x + ", Y: " + this.y);
   }
 
-  public getDistance(another: PointN) {
-    // ...
+  // getter
+  getX() {
+    return this.x;
+  }
+
+  // setter
+  setX(value: number) {
+    if (value < 0) {
+      throw new Error("Value cannot be less than 0.");
+    } else {
+      this.x = value;
+    }
   }
 }
 
 let pointN = new PointN(1, 2);
-// pointN.x = 10; // cannot access this
+let x = pointN.getX();
+pointN.setX(51);
 
 pointN.draw();
 
+// Optional
 let pointN2 = new PointN();
 pointN2.draw();

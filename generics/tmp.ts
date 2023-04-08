@@ -33,3 +33,28 @@ const makeArray = <X, Y = number>(x: X, y: Y): [X, Y] => {
 
 const v = makeArray(5, "6");
 const v2 = makeArray<string | null>("a", 4);
+
+// ------------------- 3 -------------------
+
+// const makeFullName = (obj: { firstName: string; lastName: string }) => {
+//   return {
+//     ...obj,
+//     fullName: obj.firstName + " " + obj.lastName,
+//   };
+// };
+
+// // here is the error if we pass extra argument in the function
+// const w = makeFullName({ firstName: "Subhranil", lastName: "Sarkar", age: 15 });
+
+const makeFullName = <T extends { firstName: string; lastName: string }>(
+  obj: T
+) => {
+  return {
+    ...obj,
+    fullName: obj.firstName + " " + obj.lastName,
+  };
+};
+
+// here is the error if we pass extra argument in the function
+const w = makeFullName({ firstName: "Subhranil", lastName: "Sarkar", age: 15 });
+// const w2 = makeFullName({ anotherName: "Subhranil", lastName: "Sarkar", age: 15 }); // error

@@ -58,3 +58,16 @@ const makeFullName = <T extends { firstName: string; lastName: string }>(
 // here is the error if we pass extra argument in the function
 const w = makeFullName({ firstName: "Subhranil", lastName: "Sarkar", age: 15 });
 // const w2 = makeFullName({ anotherName: "Subhranil", lastName: "Sarkar", age: 15 }); // error
+
+// ------------------- 4 -------------------
+
+// base 
+interface Tab<T> {
+  id: string;
+  position: number;
+  data: T;
+}
+
+// create generics using Tab
+type NumberTab = Tab<number>
+type StringTab = Tab<string>

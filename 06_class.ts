@@ -1,13 +1,9 @@
 class PointN {
-  // Fields
-  x: number | undefined;
-  y: number | undefined;
-  private z: number | undefined;
+  // private
+  //   constructor(private x?: number, private y?: number) {}
 
-  constructor(x?: number, y?: number, z?: number) {
-    this.x = x;
-    this.y = y;
-  }
+  // pubclic
+  constructor(private x?: number, private y?: number) {}
 
   // methdos
   draw() {
@@ -20,10 +16,8 @@ class PointN {
 }
 
 let pointN = new PointN(1, 2);
-pointN.x = 10; // public member
+// pointN.x = 10; // cannot access this
 
-// cannot do this, because 'z' is the private member of the class
-// pointN.z = 50;
 pointN.draw();
 
 let pointN2 = new PointN();

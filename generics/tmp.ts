@@ -27,10 +27,9 @@ const l2 = last(["a", "b", "c"]);
 // const v = makeArray(5);
 // const v2 = makeArray("a");
 
-const makeArray = <T>(x: T): T[] => {
-  return [x];
+const makeArray = <X, Y>(x: X, y: Y): [X, Y] => {
+  return [x, y];
 };
 
-const v = makeArray(5);
-const v2: string[] = makeArray<string>("a");
-
+const v = makeArray(5, "6");
+const v2 = makeArray("a", 4);
